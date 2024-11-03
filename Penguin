@@ -1,0 +1,98 @@
+public class Penguin extends Animal implements Walk, Swim, Eat {
+    private boolean isSwimming;
+    private int walkSpeed;
+    private int swimSpeed;
+    private int age;
+    private double height;
+    private double weight;
+
+    public Penguin() {
+        super("Penguin");
+    }
+
+    public boolean isSwimming() {
+        return isSwimming;
+    }
+
+    public void setSwimming(boolean swimming) {
+        this.isSwimming = swimming;
+    }
+
+    public int getWalkSpeed() {
+        return walkSpeed;
+    }
+
+    public void setWalkSpeed(int walkSpeed) {
+        this.walkSpeed = walkSpeed;
+    }
+
+    public int getSwimSpeed() {
+        return swimSpeed;
+    }
+
+    public void setSwimSpeed(int swimSpeed) {
+        this.swimSpeed = swimSpeed;
+    }
+
+    @Override
+    public int getAge() {
+        return age;
+    }
+
+    @Override
+    public void setAge(int age) {
+        this.age = age;
+    }
+
+    @Override
+    public double getHeight() {
+        return height;
+    }
+
+    public void setHeight(double height) {
+        this.height = height;
+    }
+
+    @Override
+    public double getWeight() {
+        return weight;
+    }
+
+    public void setWeight(double weight) {
+        this.weight = weight;
+    }
+
+    @Override
+    public void eatingCompleted() {
+        System.out.println("Penguin has completed eating.");
+    }
+
+    @Override
+    public void walking() {
+        if (!isSwimming) {
+            System.out.println("Penguin is waddling at speed: " + walkSpeed + " mph.");
+        } else {
+            System.out.println("Penguin can't walk while swimming!");
+        }
+    }
+
+    @Override
+    public void swimming() {
+        if (isSwimming) {
+            System.out.println("Penguin is swimming at speed: " + swimSpeed + " nautical miles per hour.");
+        } else {
+            System.out.println("Penguin can't swim while walking!");
+        }
+    }
+
+    public void getDetails() {
+        System.out.println("Penguin Details:");
+        System.out.println("Name: " + getNameOfAnimal());
+        System.out.println("Age: " + getAge());
+        System.out.println("Height: " + getHeight() + " cm");
+        System.out.println("Weight: " + getWeight() + " kg");
+        System.out.println("Walking Speed: " + getWalkSpeed() + " mph");
+        System.out.println("Swimming Speed: " + getSwimSpeed() + " nautical miles per hour");
+        System.out.println("Current State: " + (isSwimming ? "Swimming" : "Walking"));
+    }
+}
