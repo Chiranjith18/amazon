@@ -1,11 +1,10 @@
 public class Tiger extends Animal implements Walk {
-    private static final String TIGER_NAME = "Tiger"; // Use uppercase for constants
     private int numberOfStripes;
     private int speed; // Speed in mph
     private int soundLevelOfRoar; // Sound level of roar
 
     public Tiger() {
-        super(TIGER_NAME); // Call the parent constructor with the tiger's name
+        super("Tiger"); // Call the parent constructor with the tiger's name
     }
 
     public int getSpeed() {
@@ -24,12 +23,13 @@ public class Tiger extends Animal implements Walk {
         this.numberOfStripes = numberOfStripes;
     }
 
-    public int getSoundLevelOfRoar() {
-        return soundLevelOfRoar;
+    // Add the following methods exactly as needed
+    public void setSoundLevel(int soundLevel) {
+        this.soundLevelOfRoar = soundLevel; // Assuming this is the variable that stores the sound level
     }
 
-    public void setSoundLevelOfRoar(int soundLevelOfRoar) {
-        this.soundLevelOfRoar = soundLevelOfRoar;
+    public int getSoundLevel() {
+        return soundLevelOfRoar; // Returns the current sound level
     }
 
     @Override
